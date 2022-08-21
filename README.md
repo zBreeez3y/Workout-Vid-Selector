@@ -47,7 +47,7 @@ You are now good to go!
 ## Usage
   - I wrote this script to run as a scheduled task and is what I'd recommend for implementation. Set this up however you feel is best. 
   - For single use:
-    -     sudo python3 workoutvidselector.py
+    -     python3 workoutvidselector.py
       
 ## Dependencies 
   - simplegmail
