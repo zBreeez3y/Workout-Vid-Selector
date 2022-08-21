@@ -51,7 +51,10 @@ You are now good to go!
       
 ## Dependencies 
   - simplegmail
+    - Linux
       -     pip3 install simplegmail
+    - Windows
+      -     python3 -m pip install simplegmail
      - https://github.com/jeremyephron/simplegmail
 
 ## Credit Where Credit Is Due
