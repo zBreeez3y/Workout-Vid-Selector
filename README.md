@@ -38,7 +38,7 @@ You are now good to go!
 **note:** The first time you run this script, a browser window will pop up via Google and you will authenticate using the gmail account that you'll be sending the emails from. Once you authenticate, it will create a "gmail_token.json" file that Workout-Vid-Selector will use for authentication on all future runs (until the token expires.) 
 
 ## Installation
-      git install https://github.com/D0p3B34t5/Workout-Vid-Selector.git
+      git clone https://github.com/D0p3B34t5/Workout-Vid-Selector.git
   - Edit script to update your scheduled workout days/playlists on lines 33-44 (optional)
 ![image](https://user-images.githubusercontent.com/98996357/185812114-016f55c1-a3d3-49a4-b5a7-18d2b0298fbd.png)
   - Provide To/From email addresses on lines 64 & 65
