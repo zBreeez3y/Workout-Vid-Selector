@@ -18,7 +18,7 @@ Workout-Vid-Selector is a script written in Python3 and was made to automate fin
       *See Credits for link to Repo*
 
 ## First things, First 
-Because SimpleGmail utilizes the Gmail API so we can send emails with the videos, you'll need to setup an OAuthv2 Client ID in the Google Cloud Console using the email that you intend to use to send messages. That way you can authenticate through this script. This can be done at: https://console.cloud.google.com
+Because SimpleGmail utilizes the Gmail API so we can send emails with the video links, you'll need to setup an OAuthv2 Client ID in the Google Cloud Console using the email that you intend to use to send messages. That way you can authenticate through this script. This can be done at: https://console.cloud.google.com
 
 If you have not done this before, here are some instructions:
 
