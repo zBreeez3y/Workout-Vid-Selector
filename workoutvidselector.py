@@ -21,7 +21,7 @@ if len(sys.argv) < 3:
 		ta = sys.argv[1]
 	except:
 		print("Error! Please provide the To: address")
-		print("Syntax: python3 workoutvidselector.py <To: Address> <From: Address...>")
+		print("Syntax: python3 workoutvidselector.py <To: Address> <From: Address>")
 		print("Press any key to continue...")
 		input()
 		exit()
@@ -29,7 +29,7 @@ if len(sys.argv) < 3:
 		fa = sys.argv[2]
 	except:
 		print("Error! Please provide the From: address")
-		print("Syntax: python3 workoutvidselector.py <To: Address> <From: Address...>")
+		print("Syntax: python3 workoutvidselector.py <To: Address> <From: Address>")
 		print("Press any key to continue...")
 		input()
 		exit()	
