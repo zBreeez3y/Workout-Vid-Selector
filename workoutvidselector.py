@@ -7,7 +7,6 @@ import re
 import random
 from simplegmail import Gmail
 
-
 def workout_vid_selector():
 	"""
 	
@@ -16,6 +15,34 @@ def workout_vid_selector():
 	
 	"""
 	
+#Check for system arguments, error if not supplied
+if len(sys.argv) < 3:
+	try:
+		ta = sys.argv[1]
+	except:
+		print("Error! Please provide the To: address")
+		print("Syntax: python3 workoutvidselector.py <To: Address> <From: Address...>")
+		print("Press any key to continue...")
+		input()
+		exit()
+	try:
+		fa = sys.argv[2]
+	except:
+		print("Error! Please provide the From: address")
+		print("Syntax: python3 workoutvidselector.py <To: Address> <From: Address...>")
+		print("Press any key to continue...")
+		input()
+		exit()	
+else: 
+	ta = sys.argv[1]
+	fa = sys.argv[2]
+if len(sys.argv) > 3:
+	print("Error! Too many arguments...")
+	print("Syntax: python3 workoutvidselector.py <To: Address> <From: Address>")
+	print("Press any key to continue...")
+	input()
+	exit()	
+
 #Check for OS
 os = sys.platform
 if "win" in os:
@@ -29,19 +56,23 @@ if os=="Win":
 elif os=="Lin":
 	date = subprocess.getoutput("date | cut -d ' ' -f 1")
 
-#Set playlist and day variables based on local date
+#Set playlist, day and workout variables based on local date
 if date=="Tue":
 	playlist = "PLmw9rXTuLboAHKq8nMec-brq4ol35EKlS" #Arm Workout Exercises Playlist
 	day = "Tuesday"
+	workout = "arms"
 elif date=="Wed":
 	playlist = "PLmw9rXTuLboDG2fXmMnff2XURFoPXMKAi" #Legs Workout Exercises Playlist
 	day = "Wednesday"
+	workout = "legs"
 elif date=="Fri":
 	playlist = "PLmw9rXTuLboD_vybrb6he9wPRrCRAJDCe" #ABS Workout Exercises Playlist
 	day = "Friday"
+	workout = "abs"
 elif date=="Sun":
 	playlist = "PLmw9rXTuLboB6iXwx3X_yVyd4OyCnQod5" #Full Body Workout Playlist
 	day = "Sunday"
+	workout = "full body"
 else: 
 	exit()
 
@@ -61,10 +92,10 @@ final3 = "https://www.youtube.com/watch?v=" + video3
 #Email the 3 random youtube videos for the day
 gmail = Gmail()
 params = {
-	"to": "",
-	"sender": "",
+	"to": "{}".format(ta),
+	"sender": "{}".format(fa),
 	"subject": "{} Workouts".format(day),
-	"msg_html": "<h1>It's {} and it's a workout day! Here are your workouts for today:</h1> <h2>Video #1</h2> <href>{}</href> <h2>Video #2</h2> <href>{}</href> <h2>Video #3</h2> <href>{}</href>".format(day, final1, final2, final3),
+	"msg_html": "<h1>It's {} and today we're focusing on {}! Here are your workouts for today:</h1> <h2>Video #1</h2> <href>{}</href> <h2>Video #2</h2> <href>{}</href> <h2>Video #3</h2> <href>{}</href>".format(day, workout, final1, final2, final3),
 	"signature": True
 }
 message = gmail.send_message(**params)
