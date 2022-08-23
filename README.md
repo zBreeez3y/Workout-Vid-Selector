@@ -49,7 +49,8 @@ You should now be good to go!
   
 ## Usage
     python3 workoutvidselector.py <To Address> <From Address>
-**Note:** While this script can be ran on a single run basis, I intended for it to be ran as a scheduled task/cron job on either Windows/Linux respectively and would recommend such for implementation. Set this up however you feel is best.
+- The From address will need to be the gmail account you used to set up the OAuth Client ID
+ - **Note:** While this script can be ran on a single run basis, I intended for it to be ran as a scheduled task/cron job on either Windows/Linux respectively and would recommend such for implementation. Set this up however you feel is best.
 ## Dependencies 
   - simplegmail
     - Linux
