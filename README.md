@@ -1,5 +1,5 @@
 # Workout-Vid-Selector
-A simple script written in Python3 that selects random videos off playlists from the Youtube channel "Workout" and emails them to you on your schedule. 
+My first script written in Python3 that selects random workout videos off different playlists (depending on the day) from the Youtube channel "Workout" and emails them to you on your schedule. 
 
 
 ## What is Workout-Vid-Selector?
@@ -14,8 +14,9 @@ Workout-Vid-Selector is a script written in Python3 and was made to automate fin
   4. Randomly selects 3 strings from the "ids" list, while removing the prior selection from the list before each new selection. 
   5. Concatenates the YouTube watch URL with the "video" variables (as the data for the "v" parameter) to produce full-length URL's
   6. Uses the SimpleGmail module to authenticate your gmail account, and send the 3 randomly generated video links to your desired email address.
+      - You'll supply the To:/From: email addresses respectively as system arguments. See *usage*
       - SimpleGmail is a Python module that utilizes the Gmail API to send the emails for this script.
-      *See Credits for link to Repo*
+      - *See Credits for link to Repo*
 
 ## First things, First 
 Because SimpleGmail utilizes the Gmail API so we can send emails with the video links, you'll need to setup an OAuthv2 Client ID in the Google Cloud Console using the email that you intend to use to send messages. That way you can authenticate through this script. This can be done at: https://console.cloud.google.com
@@ -42,16 +43,13 @@ You should now be good to go!
 ## Installation
  -     git clone https://github.com/D0p3B34t5/Workout-Vid-Selector.git
    -  **Install Git on Windows here:** https://git-scm.com/download/win
-  - Edit script to update your scheduled workout days/playlists on lines 33-44 (optional)
-![image](https://user-images.githubusercontent.com/98996357/185812114-016f55c1-a3d3-49a4-b5a7-18d2b0298fbd.png)
-  - Provide To/From email addresses on lines 64 & 65
-![image](https://user-images.githubusercontent.com/98996357/185812654-114eba59-9c25-4c8a-a25f-67ceb3311d3b.png)
+  - Edit script to update your scheduled workout days/playlists on lines 62-77 (optional)
+![image](https://user-images.githubusercontent.com/98996357/186215613-bbdff411-39df-4a51-ab5b-6322287d8b4c.png)
+
   
 ## Usage
-  - I wrote this script to run as a scheduled task and is what I'd recommend for implementation. Set this up however you feel is best. 
-  - For single use:
-    -     python3 workoutvidselector.py
-      
+    python3 workoutvidselector.py <To Address> <From Address>
+**Note:** While this script can be ran on a single run basis, I intended for it to be ran as a scheduled task/cron job on either Windows/Linux respectively and would recommend such for implementation. Set this up however you feel is best.
 ## Dependencies 
   - simplegmail
     - Linux
