@@ -38,12 +38,13 @@ If you have not done this before, here are some instructions:
 You can find the official docuemntation here: https://support.google.com/googleapi/answer/6158849?hl=en
 You should now be good to go!
 
-**note:** The first time you run this script (or create a new Client ID), a browser window will pop up and open with the google login screen. You will authenticate using the Gmail account that you'll be sending the emails from. Once you authenticate, it will create a "gmail_token.json" file that Workout-Vid-Selector script will use for authentication on all future runs (or until the token expires.)
+**Note:** The first time you run this script (or create a new Client ID), you'll need to run it with the argument "--auth_host_name localhost" by itself which will open a browser window to the Gmail oAuth authentication page. You will authenticate using the Gmail account that you'll be sending the emails from. Once you authenticate and provide access permissions, it will create a "gmail_token.json" file in the scripts root directory that Workout-Vid-Selector script will use for authentication on all future runs (or until the token expires.)
 
 ## Installation
  -     git clone https://github.com/D0p3B34t5/Workout-Vid-Selector.git
    -  **Install Git on Windows here:** https://git-scm.com/download/win
-  - Edit script to update your scheduled workout days/playlists on lines 62-77 (optional)
+ -     python3 workoutvidselector.py --auth_host_name localhost
+  - (OPTIONAL) Edit script to update your scheduled workout days/playlists on lines 62-77
 ![image](https://user-images.githubusercontent.com/98996357/186215613-bbdff411-39df-4a51-ab5b-6322287d8b4c.png)
 
   
